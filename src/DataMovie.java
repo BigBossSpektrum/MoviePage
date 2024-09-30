@@ -1,42 +1,66 @@
-import java.util.Locale;
-import java.util.Scanner;
+import com.aluracursos.moviepage.calculos.CalculadoraDeTiempo;
+import com.aluracursos.moviepage.calculos.FiltroRecomendaciones;
+import com.aluracursos.moviepage.modelos.Episodio;
+import com.aluracursos.moviepage.modelos.Pelicula;
+import com.aluracursos.moviepage.modelos.Serie;
 
 public class DataMovie {
     public static void main(String[] args) {
-        Data miPelicula = new Data();
-        miPelicula.nombre = "VanHellsing";
-        miPelicula.descripcion = "Conocedor de su fama como cazadora de monstruos, Van Helsing decide recabar la ayuda de la princesa Anna Valerious de Transilvania. Lejos de ser una damisela a la que se debe socorrer, Anna Valerious es el último miembro de una vieja familia entregada a la persecución y destrucción de Drácula.";
-        miPelicula.fechaDeLanzamiento = 2004;
-        miPelicula.duracion = 120;
+        Pelicula miPelicula = new Pelicula("Encanto", 2021);
+        miPelicula.setDuracionEnMinutos(120);
+        miPelicula.setIncluidoEnElPlan(true);
 
-        miPelicula.datosDePeliculas();
-        System.out.println("**********************************************");
-//        miPelicula.evaluar(8);
-//        miPelicula.evaluar(8.6);
-//        miPelicula.evaluar(9.1);
+        miPelicula.muestraFichaTecnica();
+        miPelicula.evalua(10);
+        miPelicula.evalua(10);
+        miPelicula.evalua(7.8);
+        System.out.println(miPelicula.getTotalDelasEvaluaciones());
+        System.out.println(miPelicula.calculaMedia());
 
-        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
-        double score1, score2, score3;
+        Serie casaDragon = new Serie("La casa del dragón", 2022);
+        casaDragon.setTemporadas(1);
+        casaDragon.setMinutosPorEpisodio(50);
+        casaDragon.setEpisodiosPorTemporada(10);
+        casaDragon.muestraFichaTecnica();
+        System.out.println(casaDragon.getDuracionEnMinutos());
 
-        System.out.println("Cual es la puntuacion del Usuario #1 para esta pelicula: " + miPelicula.nombre);
-        score1 = sc.nextDouble();
+        Pelicula otraPelicula = new Pelicula("Matrix", 1998);
+        otraPelicula.setDuracionEnMinutos(180);
 
-        System.out.println("Cual es la puntuacion del Usuario #2 para esta pelicula: " + miPelicula.nombre);
-        score2 = sc.nextDouble();
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(casaDragon);
+        calculadora.incluye(otraPelicula);
+        System.out.println("Tiempo necesario para ver tus títulos favoritos estas vacaciones "
+                + calculadora.getTiempoTotal() + " minutos");
 
-        System.out.println("Cual es la puntuacion del Usuario #3 para esta pelicula: " + miPelicula.nombre);
-        score3 = sc.nextDouble();
+        FiltroRecomendaciones filtroRecomendaciones = new FiltroRecomendaciones();
+        filtroRecomendaciones.filtro(miPelicula);
 
-        double media = (score1 + score2 + score3) / 3;
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La casa targeryen");
+        episodio.setSerie(casaDragon);
+        episodio.setTotalDeVisualizacion(400);
+        filtroRecomendaciones.filtro(episodio);
 
-        System.out.println("La media de puntaje para: " + miPelicula.nombre + "es: " + media);
+        System.out.println(episodio);
+
+        var peliculaNueva = new Pelicula("Interestelar", 2014);
+        peliculaNueva.setDuracionEnMinutos(180);
+        peliculaNueva.setDirector("Christopher Nolan");
+        peliculaNueva.setIncluidoEnElPlan(true);
+
+        System.out.println(peliculaNueva);
+
+        var serieNueva = new Serie("Swallowed Star", 2022);
+        serieNueva.setTemporadas(3);
+        serieNueva.setEpisodiosPorTemporada(60);
+        serieNueva.setEpisodiosPorTemporada(60);
+        serieNueva.setMinutosPorEpisodio(20);
+        serieNueva.setEscritor("Zhu Hong Zhi");
 
 
-//        System.out.println(miPelicula.sumaDeScore);
-//        System.out.println(miPelicula.mediaDeScore());
-
-//        Scanner keyboard = new Scanner(System.in);
-
-
+        System.out.println(serieNueva);
     }
 }
