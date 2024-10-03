@@ -46,8 +46,13 @@ public class Serie extends Titulo {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
-    public String toString() {
+    //Se comento para realizar prueba con Collections
+    /* public String toString() {
         return "Serie: " + this.getNombre() + " Fue estrenada en: " + "(" + this.getFechaDeLanzamiento() + ")" + " Y escrita por: " + "(" + this.getEscritor() + ")" + " Actualmente tiene: " + this.getTemporadas() + " cada capitulo tiene una duracion de minutos: " + "(" + this.getMinutosPorEpisodio() +")" + " y cada temporada tiene un aproximado de " + this.getEpisodiosPorTemporada() + " Episodios";
+    } */
+
+    public String toString() {
+        return "Serie: " + this.getNombre() + " (" + this.getFechaDeLanzamiento() + ")";
     }
 
 

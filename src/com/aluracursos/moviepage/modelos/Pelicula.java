@@ -24,9 +24,15 @@ public class Pelicula extends Titulo implements Clasificacion {
         return (int) (calculaMedia() / 2);
     }
 
-    @Override
+    //Se comento para realizar pruebas con Collection
+    /* @Override
     public String toString() {
         return "Pelicula: " + this.getNombre() + " Fue estrenada en: " + "(" + this.getFechaDeLanzamiento() + ")" + " Y dirigida por: " + "(" + this.getDirector() + ")" + " Duracion en minutos: " + "(" + this.getDuracionEnMinutos() +")";
+    } */
+
+    @Override
+    public String toString() {
+        return "Pelicula: " + this.getNombre() + " (" + this.getFechaDeLanzamiento() + ")";
     }
 
 

@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68f619b4-eedb-44b0-b65d-ee97a2603160" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/calculos/Clasificacion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/calculos/FiltroRecomendaciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Episodio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Pelicula.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Titulo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/exception/ErrorEnConversionDeDuracionEnMinutosException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/TituloOmdb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/principal/DataMovieLista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/principal/PrincipalConAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoviePage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MoviePage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/principal/DataMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Serie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Titulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Titulo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -44,20 +46,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DataMovie.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DataMovie.executor": "Run",
+    "Application.DataMovieLista.executor": "Run",
+    "Application.PrincipalConAPI.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/silve/Downloads/JAR Java/gson-2.11.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.aluracursos.moviepage.exception" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DataMovie" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DataMovie" />
+      <option name="MAIN_CLASS_NAME" value="com.aluracursos.moviepage.principal.DataMovie" />
       <module name="MoviePage" />
       <method v="2">
         <option name="Make" enabled="true" />

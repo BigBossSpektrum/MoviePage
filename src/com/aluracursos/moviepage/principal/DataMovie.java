@@ -1,3 +1,5 @@
+package com.aluracursos.moviepage.principal;
+
 import com.aluracursos.moviepage.calculos.CalculadoraDeTiempo;
 import com.aluracursos.moviepage.calculos.FiltroRecomendaciones;
 import com.aluracursos.moviepage.modelos.Episodio;
