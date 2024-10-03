@@ -1,0 +1,42 @@
+[
+  {
+    "Nombre": "Deadpool",
+    "FechaDeLanzamiento": 2016,
+    "DuracionEnMinutos": 108,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Fury",
+    "FechaDeLanzamiento": 2014,
+    "DuracionEnMinutos": 134,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Seven Samurai",
+    "FechaDeLanzamiento": 1954,
+    "DuracionEnMinutos": 207,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Trouble",
+    "FechaDeLanzamiento": 2019,
+    "DuracionEnMinutos": 87,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Django",
+    "FechaDeLanzamiento": 1966,
+    "DuracionEnMinutos": 91,
+    "IncluidoEnElPlan": false,
+    "SumaDeLasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  }
+]

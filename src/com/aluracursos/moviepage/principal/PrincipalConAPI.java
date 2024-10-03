@@ -7,48 +7,77 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalConAPI {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner lectura = new Scanner(System.in);
-        System.out.println("Escriba el nombre de la carta: ");
-        var busqueda = lectura.nextLine();
 
-        String direccion = "https://www.omdbapi.com/?t=" +
-                busqueda.replace(" ", "+") +
-                "&apikey=1f7b2062";
+        //Esta linea guarda los titulos de peliculas en una archivo
+        List<Titulo> titulos = new ArrayList<>();
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(direccion))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
 
-        String json = response.body();
-        System.out.println(json);
+        while (true){
 
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-        System.out.println(miTituloOmdb);
+            System.out.println("Escriba el nombre de la carta: ");
+            var busqueda = lectura.nextLine();
 
-        try {
-        Titulo miTitulo = new Titulo(miTituloOmdb);
-        System.out.println(miTitulo);
-        }catch (NumberFormatException e){
-            System.out.println("Ocurrio un error: ");
-            System.out.println(e.getMessage());
-        }catch (IllegalArgumentException e){
-            System.out.println("Error en la URI, verifique la direccion.");
-        }catch (ErrorEnConversionDeDuracionEnMinutosException e){
-            System.out.println(e.getMensajeDeError());
+            if (busqueda.equalsIgnoreCase("salir")){
+                break;
+            }
+
+            String direccion = "https://www.omdbapi.com/?t=" +
+                    busqueda.replace(" ", "+") +
+                    "&apikey=1f7b2062";
+
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(direccion))
+                    .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+
+            String json = response.body();
+            System.out.println(json);
+
+            TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+            System.out.println(miTituloOmdb);
+
+            try {
+                Titulo miTitulo = new Titulo(miTituloOmdb);
+                System.out.println(miTitulo);
+
+            //Guarda los titulos en la memoria
+            titulos.add(miTitulo);
+
+            //Manejo de Excepciones
+            }catch (NumberFormatException e){
+                System.out.println("Ocurrio un error: ");
+                System.out.println(e.getMessage());
+            }catch (IllegalArgumentException e){
+                System.out.println("Error en la URI, verifique la direccion.");
+            }catch (ErrorEnConversionDeDuracionEnMinutosException e){
+                System.out.println(e.getMensajeDeError());
+            }
         }
+
+        System.out.println(titulos);
+
+        FileWriter escritura = new FileWriter("titulos.json");
+        escritura.write(gson.toJson(titulos));
+        escritura.close();
         System.out.println("Programa finalizado!");
     }
 }
