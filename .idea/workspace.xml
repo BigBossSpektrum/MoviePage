@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68f619b4-eedb-44b0-b65d-ee97a2603160" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Titulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/modelos/Titulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/moviepage/principal/PrincipalConAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/moviepage/principal/PrincipalConAPI.java" afterDir="false" />
-    </list>
+    <list default="true" id="68f619b4-eedb-44b0-b65d-ee97a2603160" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
